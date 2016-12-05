@@ -7,7 +7,7 @@ In the warehouse module you can manage your own warehouses, theirs products. Als
 1. Select an issue what you want to solve
 1. Assign it to yourself
 1. Solve it
-1. Commit it with `[issue_id] description` commit message (Example: [12] change title of website)
+1. Commit it with `#issue_id description` commit message (Example: #12 change title of website)
 1. Push it
 1. Say it to your instructor
 

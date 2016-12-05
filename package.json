@@ -1,0 +1,23 @@
+{
+  "name": "warehouse",
+  "version": "1.0.0",
+  "description": "Package for Warehouse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schonherz-ui-2016/warehouse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schonherz-ui-2016/warehouse/issues"
+  },
+  "homepage": "https://github.com/schonherz-ui-2016/warehouse#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}

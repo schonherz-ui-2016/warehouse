@@ -2,9 +2,7 @@
   "name": "warehouse",
   "description": "Package for Warehouse",
   "main": "index.js",
-  "authors": [
-    
-  ],
+  "authors": [],
   "license": "ISC",
   "homepage": "https://github.com/schonherz-ui-2016/warehouse",
   "ignore": [
@@ -15,6 +13,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "3.3.7"
+    "bootstrap": "3.3.7",
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9"
   }
 }

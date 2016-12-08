@@ -4,6 +4,6 @@
 
 (function() {
     angular
-        .module('warehouseModule', []);
+        .module('warehouse', []);
 
 })();

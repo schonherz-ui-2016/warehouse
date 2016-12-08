@@ -18,6 +18,11 @@
   "homepage": "https://github.com/schonherz-ui-2016/warehouse#readme",
   "devDependencies": {
     "gulp": "3.9.1",
-    "gulp-sass": "2.3.2"
+    "gulp-sass": "2.3.2",
+	"gulp-express": "^0.3.5"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "express": "~4.0.0"
   }
 }

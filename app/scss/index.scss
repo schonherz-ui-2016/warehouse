@@ -1,56 +1,45 @@
-tml, body {
+html, body {
     height: 100%;
 	width: 100%;
 }
-
 nav {
     width: 100%;
     background-color: #eeeeee;
 }
-	
 #customer, #warehouse, #admin{
     margin-top: 5px;
     margin-left: 5px;
     margin-bottom: 5px;
 }
-
 #sidebar {
     background-color: #ddd;
     height: 100%;
     padding: .5em;
 }
-
 #warehouse-modal {
     margin-top: 2.5em;
 }
-
 .glyphicon-remove {
     position: relative;
     top: .2em;
 }
-
 #address {
     margin-bottom: 9em;
 }
-
 #add {
     float: right;
 }
-
 #owner {
     background-color: white;
     border: none;
     box-shadow: none;
 }
-
 .col-sm-9{
 width: 100%;
 }
-
 .col-sm-9, .col-sm-3, .col-sm-12 {
     padding: 0;
 }
-
 .row {
     margin: 0;
 }

@@ -37,9 +37,9 @@ app
 ```
 
 ## Routing
-`/` - login page
-`/registration` - registration page
-`/warehouse` - warehouse/main page
+- `/` - login page
+- `/registration` - registration page
+- `/warehouse` - warehouse/main page
 
 ## Styleguide / Naming conventions
 In this project we will follow johnpapa's styleguide:

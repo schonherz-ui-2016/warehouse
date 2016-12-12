@@ -6,7 +6,7 @@
         .module('app')
         .directive('warehouse', function() {
             return {
-                controllerAs: ${Directiva name:},
+                controllerAs: ${Directiva_name},
                 restrict: 'A',
                 templateUrl: '',
                 scope: {

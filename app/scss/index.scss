@@ -71,11 +71,7 @@ nav {
     padding-top: 4px;
     padding-right: 5px;
     padding-left: 5px;
-
-    margin-left: 14px;
-    margin-right: 14px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin: 4px 14px 4px 14px;
 
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -97,29 +93,29 @@ nav {
   }
 }
 
-#loginButton{
+#loginButton {
   position: fixed;
   right: 5px;
   top: 5px;
 }
+
 /*--------------- Logo End -----------------*/
 /*--------------- Login part-----------------*/
 
-#login{
+#login {
   font-size: 16px;
-  margin: 5px auto  0;
+  margin: 5px auto 0;
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid;
-  border-color: #dbdbdb;
-  width:  300px;
+  border: 1px solid #dbdbdb;
+  width: 300px;
   height: 300px;
   padding: 10px;
   box-shadow: 5px 5px 5px #888888;
-  label{
+  label {
     margin: 5px;
   }
-  input{
+  input {
     align-content: center;
     display: block;
     width: 270px;
@@ -129,34 +125,33 @@ nav {
     margin: 5px;
     background-color: #faffbd;
   }
-  #loginSendButton{
+  #loginSendButton {
     display: block;
     margin: 10px;
     text-align: center;
     position: relative;
     left: 80px;
   }
-  a{
+  a {
     position: relative;
     left: 90px;
   }
 }
 
-#registration{
+#registration {
   font-size: 16px;
-  margin: 5px auto  0;
+  margin: 5px auto 0;
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid;
-  border-color: #dbdbdb;
-  width:  300px;
+  border: 1px solid #dbdbdb;
+  width: 300px;
   height: 350px;
   padding: 10px;
   box-shadow: 5px 5px 5px #888888;
-  label{
+  label {
     margin: 5px;
   }
-  input{
+  input {
     align-content: center;
     display: block;
     width: 270px;
@@ -165,7 +160,7 @@ nav {
     padding: 5px;
     margin: 5px;
   }
-  #registrationButton{
+  #registrationButton {
     display: block;
     margin: 10px;
     text-align: center;

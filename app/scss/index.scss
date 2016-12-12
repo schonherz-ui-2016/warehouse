@@ -97,6 +97,11 @@ nav {
   }
 }
 
+#loginButton{
+  position: fixed;
+  right: 5px;
+  top: 5px;
+}
 /*--------------- Logo End -----------------*/
 /*--------------- Login part-----------------*/
 
@@ -124,7 +129,7 @@ nav {
     margin: 5px;
     background-color: #faffbd;
   }
-  #loginButton{
+  #loginSendButton{
     display: block;
     margin: 10px;
     text-align: center;

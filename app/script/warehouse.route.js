@@ -1,3 +1,12 @@
-/**
- * Created on 2016.12.05..
- */
+
+(function () {
+    angular
+        .module('warehouse')
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/warehouse',{
+                    templateUrl: 'pages/main/main.html',
+                    controller: 'main'
+                })
+        })
+})();

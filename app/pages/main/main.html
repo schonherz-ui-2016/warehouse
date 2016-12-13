@@ -1,0 +1,60 @@
+<div class="col-sm-9">
+    <header>
+        <nav>
+            <a id="customer" type="button" class="btn btn-default">Customer</a>
+            <a id="warehouse" type="button" class="btn btn-default">Warehouse</a>
+            <a id="admin" type="button" class="btn btn-default">Admin</a>
+            <button id="loginButton" type="button" class="btn btn-primary">Log in <span class="glyphicon glyphicon-log-in"></span></button>
+
+        </nav>
+    </header>
+
+    <!-- Modal -->
+    <div id="warehouse-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="pull-left">New warehouse</h3>
+                    <button type="button" class="pull-right btn btn-danger btn-xs" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="owner">Owner:</label>
+                            <input id="owner" class="form-control" name="owner" type="text" readonly value="Me">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input id="name" ng-model="name" class="form-control" name="name" type="text" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input id="address" ng-model="address" class="form-control" name="address" type="text" autocomplete="off">
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button ng-click="" id="add" class="btn btn-primary" data-dismiss="modal">
+                                <b>Add</b>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="logo_area"><span class="logo glyphicon glyphicon-transfer"></span>
+            <div id="logo_text">Warehouse</div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+</div>
+<div id="sidebar" class="col-sm-3">
+    <button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#warehouse-modal">New warehouse</button>
+</div>

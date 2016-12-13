@@ -8,5 +8,8 @@
                     templateUrl: 'pages/main/main.html',
                     controller: 'main'
                 })
-        })
+                .otherwise({
+                    templateUrl: 'pages/404/404.html'
+                });
+        });
 })();

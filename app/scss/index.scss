@@ -44,9 +44,9 @@ nav {
   box-shadow: none;
 }
 
-.col-sm-9 {
+/*.col-sm-9 {
   width: 100%;
-}
+}*/
 
 .col-sm-9, .col-sm-3, .col-sm-12 {
   padding: 0;
@@ -94,7 +94,7 @@ nav {
 }
 
 #loginButton {
-  position: fixed;
+  position: relative;
   right: 5px;
   top: 5px;
 }
@@ -170,3 +170,28 @@ nav {
 }
 
 /*--------------- Login part end-----------------*/
+
+/*---404 Page CSS---*/
+.header-404 {
+  background-color: #d9edf6;
+  color: #2f6f95;
+  font-size: 2em;
+  padding: .7em;
+  text-align: center;
+}
+.sad-face {
+  font-size: 2.5em;
+  text-align: center;
+}
+.glyphicon-eye-open{
+  padding: 0 .5em;
+}
+.glyphicon-tint {
+  display: block;
+  margin: .25em;
+  padding-left: 3.5em;
+}
+.first-tear {
+  margin-top: -.35em;
+}
+/*---  End of 404 Page CSS ---*/

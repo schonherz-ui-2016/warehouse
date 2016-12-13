@@ -57,7 +57,7 @@ nav {
 }
 
 /*--------------- Logo -----------------*/
-.logo_area {
+[logo]{
   background-color: #EFEDF2; /* grey*/
   margin: 5px;
   width: 240px;
@@ -83,7 +83,7 @@ nav {
     -webkit-transform-origin: 0 100% 0deg;
     transform-origin: 0 100% 0deg;
   }
-  #logo_text {
+  .logo-text {
     font-family: sans-serif;
     font-size: 32px;
     color: #d52623;

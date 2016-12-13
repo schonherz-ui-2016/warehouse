@@ -4,6 +4,6 @@
 
 (function() {
     angular
-        .module('warehouse', []);
+        .module('warehouse', ['ngRoute']);
 
 })();

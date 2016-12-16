@@ -195,3 +195,25 @@ nav {
   margin-top: -.35em;
 }
 /*---  End of 404 Page CSS ---*/
+/*---  Warehouses ---*/
+.warehouses {
+  //margin: 1em 0;
+  padding: .25em 1.5em;
+  &:first-child {
+    margin: 0 0 0 1em;
+  }
+}
+.warehouse {
+  margin: 1em 0;
+}
+.glyphicon-pencil, .glyphicon-trash {
+  cursor: pointer;
+  padding: 0 .15em;
+}
+.glyphicon-trash:hover {
+  color: #d52623;
+}
+.glyphicon-pencil:hover {
+  color: #377ab7;
+}
+/*---  End of Warehouses ---*/

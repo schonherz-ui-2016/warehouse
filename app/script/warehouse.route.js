@@ -6,7 +6,8 @@
             $routeProvider
                 .when('/warehouse',{
                     templateUrl: 'pages/main/main.html',
-                    controller: 'main'
+                    controller: 'main',
+                    controllerAs: 'main'
                 })
                 .otherwise({
                     templateUrl: 'pages/404/404.html'

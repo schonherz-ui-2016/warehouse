@@ -12,6 +12,7 @@
         this.getWarehouse = getWarehouse;
         this.getWarehouses = getWarehouses;
         this.login = login;
+        this.registration = registration;
         this.updateWarehouse = updateWarehouse;
 
         function createWarehouse(warehouse, token){
@@ -57,6 +58,14 @@
 
         function login(user){
             return $http.post(urlLogin, user);
+        }
+
+        function registration(user) {
+            return $http.post(domain+'/user/registration', {
+                "email": user.email,
+                "password": user.password,
+                "name":user.name
+            });
         }
 
         function updateWarehouse(warehouse, token) {

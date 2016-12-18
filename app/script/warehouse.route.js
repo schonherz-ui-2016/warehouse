@@ -9,13 +9,15 @@
                     controller: 'main',
                     controllerAs: 'main'
                 })
-                .when('/login',{
+                .when('/',{
                     templateUrl: 'pages/login/login.html',
-                    controller: 'loginController'
+                    controller: 'login',
+                    controllerAs: 'login'
                 })
-                .when('/register',{
+                .when('/registration',{
                     templateUrl: 'pages/registration/registration.html',
-                    controller: 'registrationController'
+                    controller: 'registration',
+                    controllerAs: 'registration'
                 })
 
                 .otherwise({

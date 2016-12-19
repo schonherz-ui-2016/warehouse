@@ -26,7 +26,7 @@
                     })
             }
 
-            $scope.createWarehouse = function () {
+            vm.createWarehouse = function () {
                 api.createWarehouse({
                     "owner": 1,
                     "name": $scope.name,

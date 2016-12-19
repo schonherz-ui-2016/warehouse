@@ -14,7 +14,7 @@
                     "password": "schonherzszalami"
                 })
                     .then(function (result) {
-                        api.token = "JWT " + result.data.token;
+                        api.token += result.data.token;
                         refresh();
                     })
             }

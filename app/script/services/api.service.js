@@ -5,6 +5,7 @@
         .service('api', Service);
 
     function Service($http){
+        this.token = "JWT ";
         var urlBase = 'http://localhost:1337/warehouse';
         var urlLogin = 'http://localhost:1337/user/login';
         this.createWarehouse = createWarehouse;
@@ -15,43 +16,43 @@
         this.registration = registration;
         this.updateWarehouse = updateWarehouse;
 
-        function createWarehouse(warehouse, token){
+        function createWarehouse(warehouse){
             return $http({
                 url: urlBase,
                 method: 'POST',
                 headers: {
-                    Authorization: token
+                    Authorization: this.token
                 },
                 data: warehouse
             });
         }
 
-        function deleteWarehouse(id, token) {
+        function deleteWarehouse(id) {
             return $http({
                 url: urlBase + '/' + id,
                 method: 'DELETE',
                 headers: {
-                    Authorization: token
+                    Authorization: this.token
                 }
             });
         }
 
-        function getWarehouse(id, token){
+        function getWarehouse(id){
             return $http({
                 url: urlBase + '/' + id,
                 method: 'GET',
                 headers: {
-                    Authorization: token
+                    Authorization: this.token
                 }
             });
         }
 
-        function getWarehouses(token) {
+        function getWarehouses() {
             return $http({
                 url: urlBase,
                 method: 'GET',
                 headers: {
-                    Authorization: token
+                    Authorization: this.token
                 }
             });
         }
@@ -68,12 +69,12 @@
             });
         }
 
-        function updateWarehouse(warehouse, token) {
+        function updateWarehouse(warehouse) {
             return $http({
                 url: urlBase + '/' + warehouse.id,
                 method: 'PUT',
                 headers: {
-                    Authorization: token
+                    Authorization: this.token
                 },
                 data: warehouse
             });

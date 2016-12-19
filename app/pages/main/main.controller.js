@@ -14,16 +14,15 @@
                     "password": "schonherzszalami"
                 })
                     .then(function (result) {
-                        $scope.token = "JWT " + result.data.token;
+                        api.token = "JWT " + result.data.token;
                         refresh();
                     })
             }
 
             function refresh(){
-                api.getWarehouses($scope.token)
+                api.getWarehouses()
                     .then(function (result) {
                         vm.warehouses = result.data;
-                        console.log(result.data);
                     })
             }
 
@@ -32,7 +31,7 @@
                     "owner": 1,
                     "name": $scope.name,
                     "address":$scope.address
-                }, $scope.token)
+                })
                     .then(function () {
                         refresh();
                     })

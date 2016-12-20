@@ -5,7 +5,7 @@
         .service('api', Service);
 
     function Service($http){
-        this.token = "JWT ";
+        var token = "JWT ";
         var urlBase = 'http://localhost:1337/warehouse';
         var urlLogin = 'http://localhost:1337/user/login';
         this.createWarehouse = createWarehouse;
@@ -21,7 +21,7 @@
                 url: urlBase,
                 method: 'POST',
                 headers: {
-                    Authorization: this.token
+                    Authorization: token
                 },
                 data: warehouse
             });
@@ -32,7 +32,7 @@
                 url: urlBase + '/' + id,
                 method: 'DELETE',
                 headers: {
-                    Authorization: this.token
+                    Authorization: token
                 }
             });
         }
@@ -42,7 +42,7 @@
                 url: urlBase + '/' + id,
                 method: 'GET',
                 headers: {
-                    Authorization: this.token
+                    Authorization: token
                 }
             });
         }
@@ -52,13 +52,16 @@
                 url: urlBase,
                 method: 'GET',
                 headers: {
-                    Authorization: this.token
+                    Authorization: token
                 }
             });
         }
 
         function login(user){
-            return $http.post(urlLogin, user);
+            return $http.post(urlLogin, user)
+                .then(function (result) {
+                    token += result.data.token;
+                })
         }
 
         function registration(user) {
@@ -74,7 +77,7 @@
                 url: urlBase + '/' + warehouse.id,
                 method: 'PUT',
                 headers: {
-                    Authorization: this.token
+                    Authorization: token
                 },
                 data: warehouse
             });

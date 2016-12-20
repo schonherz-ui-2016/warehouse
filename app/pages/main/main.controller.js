@@ -13,8 +13,7 @@
                     "email": "admin@example.com",
                     "password": "schonherzszalami"
                 })
-                    .then(function (result) {
-                        api.token += result.data.token;
+                    .then(function () {
                         refresh();
                     })
             }
@@ -29,8 +28,8 @@
             vm.createWarehouse = function () {
                 api.createWarehouse({
                     "owner": 1,
-                    "name": $scope.name,
-                    "address":$scope.address
+                    "name": vm.name,
+                    "address":vm.address
                 })
                     .then(function () {
                         refresh();

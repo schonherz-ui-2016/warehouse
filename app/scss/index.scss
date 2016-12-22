@@ -23,10 +23,6 @@ nav {
   right: 0;
 }
 
-#warehouse-modal {
-  margin-top: 2.5em;
-}
-
 .glyphicon-remove {
   position: relative;
   top: .2em;
@@ -219,3 +215,29 @@ nav {
   color: #377ab7;
 }
 /*---  End of Warehouses ---*/
+/*---  List Header  ---*/
+.list-header {
+  margin-top: .75em;
+  padding: 0 .75em;
+}
+.list-header-content {
+  background-color: #337ab7;
+  color: white;
+  margin-bottom: 0;
+  padding: .25em 0;
+  label {
+    margin: .5em .35em;
+  }
+  input {
+    margin-top: .8225em;
+  }
+  .panel-body {
+    padding: 0 .5em;
+    select {
+      color: black;
+      font-weight: bold;
+      width: 150px;
+    }
+  }
+}
+/*---  End of List Header  ---*/

@@ -5,6 +5,11 @@
         .controller('main', function ($scope, api) {
 
             var vm = this;
+            vm.sortBy = [
+                { name: "Address", value: "address" },
+                { name: "Date", value: "createdAt" },
+                { name: "Name", value: "name" }
+            ];
 
             init();
 

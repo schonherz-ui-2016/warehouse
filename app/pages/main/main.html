@@ -48,8 +48,21 @@
 
     <main>
         <div logo></div>
+        <!-- List Header -->
+        <div class="list-header col-sm-12">
+            <div class="list-header-content panel panel-primary">
+                <div class="panel-body">
+                    <input ng-model="reverse" class="pull-right" id="reverse" type="checkbox" name="reverse">
+                    <label class="pull-right" for="reverse">Reverse</label>
+                    <select ng-model="sortBy" class="form-control pull-right" id="sort-by">
+                        <option ng-repeat="x in main.sortBy" value="{{x.value}}">{{x.name}}</option>
+                    </select>
+                    <label class="pull-right" for="sort-by">Sort by: </label>
+                </div>
+            </div>
+        </div>
         <div class="warehouses col-sm-12">
-            <div ng-repeat="warehouse in main.warehouses">
+            <div ng-repeat="warehouse in main.warehouses | orderBy: sortBy : reverse">
                 <div warehouse="warehouse" class="warehouse panel panel-info">
                 </div>
             </div>

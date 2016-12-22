@@ -1,10 +1,9 @@
-
 (function () {
     angular
         .module('warehouse')
         .service('api', Service);
 
-    function Service($http){
+    function Service($http) {
         var token = "JWT ";
         var urlBase = 'http://localhost:1337/warehouse';
         var urlLogin = 'http://localhost:1337/user/login';
@@ -16,7 +15,7 @@
         this.registration = registration;
         this.updateWarehouse = updateWarehouse;
 
-        function createWarehouse(warehouse){
+        function createWarehouse(warehouse) {
             return $http({
                 url: urlBase,
                 method: 'POST',
@@ -37,7 +36,7 @@
             });
         }
 
-        function getWarehouse(id){
+        function getWarehouse(id) {
             return $http({
                 url: urlBase + '/' + id,
                 method: 'GET',
@@ -57,18 +56,22 @@
             });
         }
 
-        function login(user){
-            return $http.post(urlLogin, user)
-                .then(function (result) {
-                    token += result.data.token;
-                })
-        }
+        function login(email, password) {
+            return $http.post('http://localhost:1337' + '/user/login', {
+                "email": email,
+                "password": password
+            })
+                .then(function (respons) {
+                    token += respons.data.token;
+                    console.log("Token:", token);
+                });
+        };
 
         function registration(user) {
-            return $http.post(domain+'/user/registration', {
+            return $http.post('http://localhost:1337' + '/user/registration', {
                 "email": user.email,
                 "password": user.password,
-                "name":user.name
+                "name": user.name
             });
         }
 
@@ -83,5 +86,4 @@
             });
         }
     }
-
 })();

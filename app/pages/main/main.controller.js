@@ -1,4 +1,3 @@
-
 (function () {
     angular
         .module('warehouse')
@@ -6,24 +5,12 @@
 
             var vm = this;
             vm.sortBy = [
-                { name: "Address", value: "address" },
-                { name: "Date", value: "createdAt" },
-                { name: "Name", value: "name" }
+                {name: "Address", value: "address"},
+                {name: "Date", value: "createdAt"},
+                {name: "Name", value: "name"}
             ];
 
-            init();
-
-            function init(){
-                api.login({
-                    "email": "admin@example.com",
-                    "password": "schonherzszalami"
-                })
-                    .then(function () {
-                        refresh();
-                    })
-            }
-
-            function refresh(){
+            function refresh() {
                 api.getWarehouses()
                     .then(function (result) {
                         vm.warehouses = result.data;
@@ -34,7 +21,7 @@
                 api.createWarehouse({
                     "owner": 1,
                     "name": vm.name,
-                    "address":vm.address
+                    "address": vm.address
                 })
                     .then(function () {
                         refresh();

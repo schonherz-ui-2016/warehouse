@@ -1,16 +1,15 @@
-<link rel="stylesheet" type="text/css" href="../../style/index.css"/>
-<script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-
 <div id="registration">
     <div logo></div>
 
     <label>E-mail:</label>
-    <input type="email" id="email" placeholder="example@example.com">
+    <input ng-model="registration.email" type="email" id="email" placeholder="example@example.com">
     <label>Password:</label>
-    <input type="password" id="pass" placeholder="password">
+    <span class="pull-right glyphicon glyphicon-info-sign"></span>
+    <input ng-model="registration.password" type="password" id="pass" placeholder="password">
     <label>Confirm password:</label>
-    <input type="password" id="passAgain" placeholder="password">
-    <button id="registrationButton" type="button" class="btn btn-primary">Registration <span
+    <input type="password" id="passAgain" placeholder="password"
+           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+           title="The password mast contains minimum 8 characters at least 1 capital letter, 1 lowercase letter and 1 number!">
+    <button ng-click="registration.registration()" id="registrationButton" class="btn btn-primary">Registration <span
             class="glyphicon glyphicon-ok"></span></button>
 </div>

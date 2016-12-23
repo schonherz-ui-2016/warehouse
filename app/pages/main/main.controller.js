@@ -4,11 +4,16 @@
         .controller('main', function ($scope, api) {
 
             var vm = this;
-            vm.sortBy = [
-                {name: "Address", value: "address"},
-                {name: "Date", value: "createdAt"},
-                {name: "Name", value: "name"}
-            ];
+            vm.sortByOptions = {
+                options: [
+                    { name: "Address", value: "address" },
+                    { name: "Date", value: "createdAt" },
+                    { name: "Name", value: "name" }
+                ],
+                selectedOption: { name: "Date", value: "createdAt" }
+            };
+
+            refresh();
 
             function refresh() {
                 api.getWarehouses()

@@ -54,15 +54,16 @@
                 <div class="panel-body">
                     <input ng-model="reverse" class="pull-right" id="reverse" type="checkbox" name="reverse">
                     <label class="pull-right" for="reverse">Reverse</label>
-                    <select ng-model="sortBy" class="form-control pull-right" id="sort-by">
-                        <option ng-repeat="x in main.sortBy" value="{{x.value}}">{{x.name}}</option>
+                    <select ng-model="main.sortByOptions.selectedOption"
+                            ng-options="option.name for option in main.sortByOptions.options track by option.value"
+                            class="form-control pull-right" id="sort-by">
                     </select>
                     <label class="pull-right" for="sort-by">Sort by: </label>
                 </div>
             </div>
         </div>
         <div class="warehouses col-sm-12">
-            <div ng-repeat="warehouse in main.warehouses | orderBy: sortBy : reverse">
+            <div ng-repeat="warehouse in main.warehouses | orderBy: main.sortByOptions.selectedOption.value : reverse">
                 <div warehouse="warehouse" class="warehouse panel panel-info">
                 </div>
             </div>

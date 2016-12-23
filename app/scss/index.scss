@@ -107,7 +107,6 @@ nav {
   border-radius: 10px;
   border: 1px solid #dbdbdb;
   width: 300px;
-  height: 300px;
   padding: 10px;
   box-shadow: 5px 5px 5px #888888;
   label {
@@ -122,6 +121,11 @@ nav {
     padding: 5px;
     margin: 5px;
     background-color: #faffbd;
+  }
+  .alert {
+    margin: 1em .25em;
+    padding: .4em;
+    text-align: center;
   }
   #loginSendButton {
     display: block;

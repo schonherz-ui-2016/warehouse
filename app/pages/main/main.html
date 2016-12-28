@@ -59,8 +59,8 @@
                            name="reverse">
                     <label class="pull-right"
                            for="reverse">Reverse</label>
-                    <select ng-model="main.sortByOptions.selectedOption"
-                            ng-options="option.name for option in main.sortByOptions.options track by option.value"
+                    <select ng-model="main.selectedOption"
+                            ng-options="option.name for option in main.sortByOptions track by option.value"
                             class="form-control pull-right"
                             id="sort-by">
                     </select>
@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="warehouses col-sm-12">
-            <div ng-repeat="warehouse in main.warehouses | filter: {name : main.search} | orderBy: main.sortByOptions.selectedOption.value : reverse">
+            <div ng-repeat="warehouse in main.warehouses | filter: {name : main.search} | orderBy: main.selectedOption.value : reverse">
                 <div warehouse="warehouse" class="warehouse panel panel-info">
                 </div>
             </div>

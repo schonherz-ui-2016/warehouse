@@ -26,7 +26,8 @@
                 else {
                     api.registration({
                         "email": vm.email,
-                        "password": vm.password
+                        "password": vm.password,
+                        "name": vm.name
                     })
                         .then(function (result) {
                             console.log(result.config.data);

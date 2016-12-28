@@ -52,18 +52,32 @@
         <div class="list-header col-sm-12">
             <div class="list-header-content panel panel-primary">
                 <div class="panel-body">
-                    <input ng-model="reverse" class="pull-right" id="reverse" type="checkbox" name="reverse">
-                    <label class="pull-right" for="reverse">Reverse</label>
+                    <input ng-model="reverse"
+                           class="pull-right"
+                           id="reverse"
+                           type="checkbox"
+                           name="reverse">
+                    <label class="pull-right"
+                           for="reverse">Reverse</label>
                     <select ng-model="main.sortByOptions.selectedOption"
                             ng-options="option.name for option in main.sortByOptions.options track by option.value"
-                            class="form-control pull-right" id="sort-by">
+                            class="form-control pull-right"
+                            id="sort-by">
                     </select>
-                    <label class="pull-right" for="sort-by">Sort by: </label>
+                    <label class="pull-right"
+                           for="sort-by">Sort by: </label>
+                    <div id="search-bar" class="pull-right">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input id="search"
+                               class="form-control"
+                               ng-model="main.search"
+                               placeholder="Search...">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="warehouses col-sm-12">
-            <div ng-repeat="warehouse in main.warehouses | orderBy: main.sortByOptions.selectedOption.value : reverse">
+            <div ng-repeat="warehouse in main.warehouses | filter: {name : main.search} | orderBy: main.sortByOptions.selectedOption.value : reverse">
                 <div warehouse="warehouse" class="warehouse panel panel-info">
                 </div>
             </div>

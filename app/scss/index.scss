@@ -240,14 +240,29 @@ nav {
     margin: .5em .35em;
   }
   input {
+    color: #565656;
+  }
+  #reverse {
     margin-top: .8225em;
   }
   .panel-body {
     padding: 0 .5em;
     select {
-      color: black;
       font-weight: bold;
       width: 150px;
+    }
+    #search-bar {
+      position: relative;
+      max-width: 300px;
+      #search {
+        padding: .5em 30px .5em .5em;
+      }
+      .glyphicon-search {
+        color: #565656;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
     }
   }
 }

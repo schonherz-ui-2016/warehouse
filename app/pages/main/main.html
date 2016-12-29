@@ -1,92 +1,95 @@
-<div class="col-sm-9">
-    <header>
-        <nav>
-            <a id="customer" type="button" class="btn btn-default">Customer</a>
-            <a id="warehouse" type="button" class="btn btn-default">Warehouse</a>
-            <a id="admin" type="button" class="btn btn-default">Admin</a>
-            <button id="logoutButton" type="button" class="pull-right btn btn-primary">Log out <span class="glyphicon glyphicon-log-out"></span></button>
+<header>
+    <nav>
+        <a id="customer" type="button" class="btn btn-default">Customer</a>
+        <a id="warehouse" type="button" class="btn btn-default">Warehouse</a>
+        <a id="admin" type="button" class="btn btn-default">Admin</a>
+        <button id="logoutButton" type="button" class="pull-right btn btn-primary">Log out <span
+                class="glyphicon glyphicon-log-out"></span></button>
 
-        </nav>
-    </header>
+    </nav>
+</header>
 
-    <!-- Modal -->
-    <div id="warehouse-modal" class="modal fade">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="pull-left">New warehouse</h3>
-                    <button type="button" class="pull-right btn btn-danger btn-xs" data-dismiss="modal">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="owner">Owner:</label>
-                            <input id="owner" class="form-control" name="owner" type="text" readonly value="Me">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input id="name" ng-model="main.name" class="form-control" name="name" type="text" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input id="address" ng-model="main.address" class="form-control" name="address" type="text" autocomplete="off">
-                        </div>
-                    </form>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <button ng-click="main.createWarehouse()" id="add" class="btn btn-primary" data-dismiss="modal">
-                                <b>Add</b>
-                            </button>
-                        </div>
+<!-- Modal -->
+<div id="warehouse-modal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="pull-left">New warehouse</h3>
+                <button type="button" class="pull-right btn btn-danger btn-xs" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="owner">Owner:</label>
+                        <input id="owner" class="form-control" name="owner" type="text" readonly value="Me">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input id="name" ng-model="main.name" class="form-control" name="name" type="text"
+                               autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input id="address" ng-model="main.address" class="form-control" name="address" type="text"
+                               autocomplete="off">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button ng-click="main.createWarehouse()" id="add" class="btn btn-primary" data-dismiss="modal">
+                            <b>Add</b>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <main>
+<main>
+    <div class="logoPlusNew">
         <div logo></div>
-        <!-- List Header -->
-        <div class="list-header col-sm-12">
-            <div class="list-header-content panel panel-primary">
-                <div class="panel-body">
-                    <input ng-model="reverse"
-                           class="pull-right"
-                           id="reverse"
-                           type="checkbox"
-                           name="reverse">
-                    <label class="pull-right"
-                           for="reverse">Reverse</label>
-                    <select ng-model="main.selectedOption"
-                            ng-options="option.name for option in main.sortByOptions track by option.value"
-                            class="form-control pull-right"
-                            id="sort-by">
-                    </select>
-                    <label class="pull-right"
-                           for="sort-by">Sort by: </label>
-                    <div id="search-bar" class="pull-right">
-                        <i class="glyphicon glyphicon-search"></i>
-                        <input id="search"
-                               class="form-control"
-                               ng-model="main.search"
-                               placeholder="Search...">
-                    </div>
+        <button class="btn btn-primary btn-lg btn-block newWarehouse" data-toggle="modal" data-target="#warehouse-modal">
+            New warehouse
+        </button>
+    </div>
+    <!-- List Header -->
+    <div class="list-header col-sm-12">
+        <div class="list-header-content panel panel-primary">
+            <div class="panel-body">
+                <input ng-model="reverse"
+                       class="pull-right"
+                       id="reverse"
+                       type="checkbox"
+                       name="reverse">
+                <label class="pull-right"
+                       for="reverse">Reverse</label>
+                <select ng-model="main.selectedOption"
+                        ng-options="option.name for option in main.sortByOptions track by option.value"
+                        class="form-control pull-right"
+                        id="sort-by">
+                </select>
+                <label class="pull-right"
+                       for="sort-by">Sort by: </label>
+                <div id="search-bar" class="pull-right">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <input id="search"
+                           class="form-control"
+                           ng-model="main.search"
+                           placeholder="Search...">
                 </div>
             </div>
         </div>
-        <div class="warehouses col-sm-12">
-            <div ng-repeat="warehouse in main.warehouses | filter: {name : main.search} | orderBy: main.selectedOption.value : reverse">
-                <div warehouse="warehouse" class="warehouse panel panel-info">
-                </div>
+    </div>
+    <div class="warehouses col-sm-12">
+        <div ng-repeat="warehouse in main.warehouses | filter: {name : main.search} | orderBy: main.selectedOption.value : reverse">
+            <div warehouse="warehouse" class="warehouse panel panel-info">
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <footer>
-    </footer>
-</div>
-<div id="sidebar" class="col-sm-3">
-    <button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#warehouse-modal">New warehouse</button>
-</div>
+<footer>
+</footer>

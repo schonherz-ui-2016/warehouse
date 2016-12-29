@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('warehouse')
-        .controller('main', function ($scope, api) {
+        .controller('main', function (api) {
 
             var vm = this;
             vm.sortByOptions = {

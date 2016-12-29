@@ -4,7 +4,7 @@
 (function () {
     angular
         .module('warehouse')
-        .controller('registration', function ($scope, api, $location) {
+        .controller('registration', function (api, $location) {
             var vm = this;
             vm.registration = function () {
                 api.registration({

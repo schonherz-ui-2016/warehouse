@@ -4,7 +4,7 @@
 
 (function () {
     angular.module('warehouse')
-        .controller('login', function ($scope, api, $location) {
+        .controller('login', function (api, $location) {
             var vm = this;
             vm.alert = false;
             vm.login = function () {

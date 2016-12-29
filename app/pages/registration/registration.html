@@ -2,14 +2,37 @@
     <div logo></div>
 
     <label>E-mail:</label>
-    <input ng-model="registration.email" type="email" id="email" placeholder="example@example.com">
+    <input ng-model="registration.email"
+           type="email"
+           id="email"
+           placeholder="example@example.com">
+    <label>Name:</label>
+    <input ng-model="registration.name"
+           type="text"
+           id="name"
+            placeholder="Name">
     <label>Password:</label>
-    <span class="pull-right glyphicon glyphicon-info-sign"></span>
-    <input ng-model="registration.password" type="password" id="pass" placeholder="password">
+    <span class="pull-right glyphicon glyphicon-info-sign"
+          title="The password must contains minimum 8 characters,
+at least 1 capital letter, 1 lowercase letter and 1 number!"></span>
+    <input ng-model="registration.password"
+           ng-pattern="registration.passwordPattern"
+           type="password"
+           id="pass"
+           placeholder="password">
+    <p ng-show="registration.isInvalid">The password is invalid. Please try again.</p>
     <label>Confirm password:</label>
-    <input type="password" id="passAgain" placeholder="password"
-           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-           title="The password mast contains minimum 8 characters at least 1 capital letter, 1 lowercase letter and 1 number!">
-    <button ng-click="registration.registration()" id="registrationButton" class="btn btn-primary">Registration <span
+    <input ng-model="registration.confirmPassword"
+           ng-pattern="registration.passwordPattern"
+           type="password"
+           id="passAgain"
+           placeholder="password">
+    <p ng-show="registration.isPasswordsNotEqual">Password does not match the confirm password.</p>
+    <div ng-show="registration.error" class="alert alert-danger">
+        Server error. Please try it later.
+    </div>
+    <button ng-click="registration.registration()"
+            id="registrationButton"
+            class="btn btn-primary">Registration <span
             class="glyphicon glyphicon-ok"></span></button>
 </div>

@@ -123,11 +123,6 @@ nav {
     margin: 5px;
     background-color: #faffbd;
   }
-  .alert {
-    margin: 1em .25em;
-    padding: .4em;
-    text-align: center;
-  }
   #loginSendButton {
     display: block;
     margin: 10px;
@@ -140,7 +135,11 @@ nav {
     left: 90px;
   }
 }
-
+.alert {
+  margin: 1em .25em;
+  padding: .4em;
+  text-align: center;
+}
 #registration {
   font-size: 16px;
   margin: 5px auto 0;
@@ -163,12 +162,19 @@ nav {
     padding: 5px;
     margin: 5px;
   }
+  .glyphicon-info-sign {
+    color: #337ab7;
+    margin: .5em .25em;
+  }
+  p {
+    color: red;
+    font-size: .85em;
+    margin: .5em;
+  }
   #registrationButton {
     display: block;
-    margin: 10px;
+    margin: 10px auto;
     text-align: center;
-    position: relative;
-    left: 80px;
   }
 }
 
@@ -234,14 +240,29 @@ nav {
     margin: .5em .35em;
   }
   input {
+    color: #565656;
+  }
+  #reverse {
     margin-top: .8225em;
   }
   .panel-body {
     padding: 0 .5em;
     select {
-      color: black;
       font-weight: bold;
       width: 150px;
+    }
+    #search-bar {
+      position: relative;
+      max-width: 300px;
+      #search {
+        padding: .5em 30px .5em .5em;
+      }
+      .glyphicon-search {
+        color: #565656;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
     }
   }
 }

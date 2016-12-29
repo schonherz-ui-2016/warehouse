@@ -4,14 +4,12 @@
         .controller('main', function (api) {
 
             var vm = this;
-            vm.sortByOptions = {
-                options: [
+            vm.sortByOptions = [
                     { name: "Address", value: "address" },
                     { name: "Date", value: "createdAt" },
                     { name: "Name", value: "name" }
-                ],
-                selectedOption: { name: "Date", value: "createdAt" }
-            };
+            ];
+            vm.selectedOption = vm.sortByOptions[1];
 
             refresh();
 

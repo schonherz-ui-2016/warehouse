@@ -237,7 +237,7 @@ nav {
   margin-bottom: 0;
   padding: .25em 0;
   label {
-    margin: .5em .35em;
+    margin: .5em 0 .5em .5em;
   }
   input {
     color: #565656;
@@ -248,10 +248,12 @@ nav {
   .panel-body {
     padding: 0 .5em;
     select {
+      display: inline-block;
       font-weight: bold;
       width: 150px;
     }
     #search-bar {
+      display: inline-block;
       position: relative;
       max-width: 300px;
       #search {
@@ -267,8 +269,9 @@ nav {
   }
 }
 
-.newWarehouse{
-  margin-left: 20px;
+.new-warehouse{
+  font-weight: bold;
+  margin: .5em .75em 0;
   width: 200px;
 }
 

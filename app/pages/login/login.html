@@ -2,12 +2,22 @@
     <div logo></div>
 
     <label>E-mail</label>
-    <input type="email" ng-model="login.email" id="email" placeholder="example@example.com">
+    <input type="email"
+           ng-model="login.email"
+           ng-keypress="($event.charCode == 13) && login.login()"
+           id="email"
+           placeholder="example@example.com">
     <label>Password</label>
-    <input type="password" ng-model="login.password" id="pass" placeholder="password">
+    <input type="password"
+           ng-model="login.password"
+           ng-keypress="($event.charCode == 13) && login.login()"
+           id="pass" placeholder="password">
     <div ng-show="login.alert" class="alert alert-danger">
         <strong>Incorrect</strong> e-mail and/or password
     </div>
-    <button ng-click="login.login()" id="loginSendButton" type="button" class="btn btn-primary">Log in <span class="glyphicon glyphicon-log-in"></span></button>
+    <button ng-click="login.login()"
+            id="loginSendButton"
+            type="button"
+            class="btn btn-primary">Log in <span class="glyphicon glyphicon-log-in"></span></button>
     <a href="#!/registration">Registration</a>
 </div>

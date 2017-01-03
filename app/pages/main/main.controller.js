@@ -14,9 +14,10 @@
             refresh();
 
             function refresh() {
-                api.getWarehouses()
+                api.getAllData()
                     .then(function (result) {
-                        vm.warehouses = result.data;
+                        vm.warehouses = result;
+                        console.log(vm.warehouses);
                     })
             }
 

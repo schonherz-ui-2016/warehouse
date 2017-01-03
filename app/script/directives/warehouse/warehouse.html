@@ -1,7 +1,7 @@
 <div class="panel-heading">
     <div>
         <span><b>{{warehouse.data.name}}</b></span>
-        <span class="pull-right"><b>Owner's name</b></span>
+        <span class="pull-right"><b>{{warehouse.data.owner.name}}</b></span>
     </div>
     <div>
         <span>{{warehouse.data.address}}</span>
@@ -13,6 +13,23 @@
 </div>
 <div class="panel-body">
     <div class="products">
-        Product List:
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-sm-6">Name</th>
+                    <th class="col-sm-4">Category</th>
+                    <th class="col-sm-1">Price</th>
+                    <th class="col-sm-1">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in warehouse.data.quantity">
+                    <td>{{product.name}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.price.toFixed(2)}}<span class="dollar-sign"> &#36;</span></td>
+                    <td>{{product.value}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

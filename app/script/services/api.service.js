@@ -38,44 +38,54 @@
             });
         }
 
-        const promises = {};
-
-        function getAllData(){
+        function getAllData() {
             return $q.all({
                 products: getProducts(),
                 users: getUsers(),
                 warehouses: getWarehouses()
             })
                 .then(function (result) {
-                    promises.products = result.products.data;
-                    promises.users = result.users.data;
-                    promises.warehouses = result.warehouses.data;
+                    console.log(result);
+                    const products = result.products.data;
+                    const users = result.users.data;
+                    const warehouses = result.warehouses.data;
 
-                    var warehouses = [];
+                    warehouses.forEach(function (warehouse) {
+                        const user = users.find(function(u) {
+                            return u.id === warehouse.ownerId;
+                        });
+                        warehouse.owner = angular.copy(user);
+                        warehouse.products = [];
+                    });
 
-                    for (var i = 0; i < promises.warehouses.length; i++) {
-                        warehouses[i] = promises.warehouses[i];
-                    }
-
-                    for (i = 0; i < warehouses.length; i++) {
-                        for (var j = 0; j < promises.users.length; j++) {
-                            if (warehouses[i].owner == promises.users[j].id) {
-                                warehouses[i].owner = promises.users[j];
-                            }
-                        }
-                    }
-
-                    for (i = 0; i < warehouses.length; i++) {
-                        for (j = 0; j < warehouses[i].quantity.length; j++) {
-                            for (var k = 0; k < promises.products.length; k++) {
-                                if (warehouses[i].quantity[j].id == promises.products[k].id) {
-                                    warehouses[i].quantity[j].name = promises.products[k].name;
-                                    warehouses[i].quantity[j].price = promises.products[k].price;
-                                    warehouses[i].quantity[j].category = promises.products[k].category.name;
+                    /*for (var i = 0; i < warehouses.length; i++) {
+                        for (var j = 0; j < warehouses[i].quantities.length; j++) {
+                            for (var k = 0; k < products.length; k++) {
+                                if (warehouses[i].quantities[j].id == products[k].id) {
+                                    const product = {
+                                        name: products[k].name,
+                                        id: products[k].id,
+                                        price: products[k].price,
+                                        category: products[k].category.name,
+                                        quantity: warehouses[i].quantities[j].value
+                                    };
+                                    warehouses[i].products[j].push(product);
                                 }
                             }
                         }
-                    }
+                    }*/
+
+                    /*
+                    warehouses.forEach(function(wh) {
+                        wh.products = [];
+                        wh.quantities.forEach(function(q) {
+                            const product = angular.copy(products.find(function(p) {
+                                return p.id === q.id;
+                            }));
+                            product.quantity = q.value;
+                            wh.products.push(product);
+                        });
+                    });*/
 
                     return warehouses;
 

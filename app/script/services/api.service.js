@@ -18,6 +18,7 @@
         this.updateWarehouse = updateWarehouse;
 
         function createWarehouse(warehouse) {
+            warehouse.quantities=[];
             return $http({
                 url: urlBase + 'warehouse',
                 method: 'POST',

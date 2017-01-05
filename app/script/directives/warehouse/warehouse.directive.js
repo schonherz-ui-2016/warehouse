@@ -20,6 +20,9 @@
     function Controller() {
         var vm = this;
         vm.onDelete = onDelete;
+        vm.sortProducts = sortProducts;
+        vm.sortName = "name";
+        vm.sortReverse = false;
 
         activate();
 
@@ -30,6 +33,12 @@
 
             console.log("torolve");
         }
+
+        function sortProducts(sortName) {
+            vm.sortName = sortName;
+            vm.sortReverse = !vm.sortReverse;
+        }
+
     }
 
 })();

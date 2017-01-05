@@ -59,24 +59,6 @@
                         warehouse.products = [];
                     });
 
-                    /*for (var i = 0; i < warehouses.length; i++) {
-                        for (var j = 0; j < warehouses[i].quantities.length; j++) {
-                            for (var k = 0; k < products.length; k++) {
-                                if (warehouses[i].quantities[j].id == products[k].id) {
-                                    const product = {
-                                        name: products[k].name,
-                                        id: products[k].id,
-                                        price: products[k].price,
-                                        category: products[k].category.name,
-                                        quantity: warehouses[i].quantities[j].value
-                                    };
-                                    warehouses[i].products[j].push(product);
-                                }
-                            }
-                        }
-                    }*/
-
-                    /*
                     warehouses.forEach(function(wh) {
                         wh.products = [];
                         wh.quantities.forEach(function(q) {
@@ -86,7 +68,7 @@
                             product.quantity = q.value;
                             wh.products.push(product);
                         });
-                    });*/
+                    });
 
                     return warehouses;
 

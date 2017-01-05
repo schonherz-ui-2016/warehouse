@@ -218,12 +218,10 @@ nav {
 .table {
   margin: 0;
 }
-.dollar-sign {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+.price {
+  span::after {
+    content: " $";
+  }
 }
 .glyphicon-pencil, .glyphicon-trash {
   cursor: pointer;

@@ -3,8 +3,10 @@
         <a id="customer" type="button" class="btn btn-default">Customer</a>
         <a id="warehouse" type="button" class="btn btn-default">Warehouse</a>
         <a id="admin" type="button" class="btn btn-default">Admin</a>
-        <button id="logoutButton" type="button" class="pull-right btn btn-primary">Log out <span
-                class="glyphicon glyphicon-log-out"></span></button>
+        <button ng-click="main.logout()" id="logoutButton" type="button" class="pull-right btn btn-primary">
+            <span class="glyphicon glyphicon-log-out"></span>
+            <span>Logout</span>
+        </button>
 
     </nav>
 </header>

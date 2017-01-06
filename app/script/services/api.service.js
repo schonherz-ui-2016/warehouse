@@ -13,6 +13,7 @@
         this.getWarehouse = getWarehouse;
         this.getWarehouses = getWarehouses;
         this.login = login;
+        this.logout = logout;
         this.registration = registration;
         this.updateWarehouse = updateWarehouse;
 
@@ -117,6 +118,11 @@
                     sessionStorage.setItem('token', 'JWT ' + respons.data.token);
                     console.log(sessionStorage.token);
                 });
+        }
+
+        function logout() {
+            sessionStorage.clear();
+            console.log(sessionStorage);
         }
 
         function registration(user) {

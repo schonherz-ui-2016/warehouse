@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('warehouse')
-        .controller('main', function (api) {
+        .controller('main', function (api, $location) {
 
             var vm = this;
             vm.sortByOptions = [
@@ -30,6 +30,11 @@
                     .then(function () {
                         refresh();
                     })
+            };
+
+            vm.logout = function () {
+                api.logout();
+                $location.path('/');
             }
 
         });

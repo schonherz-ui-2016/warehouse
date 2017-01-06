@@ -1,11 +1,7 @@
 (function () {
     angular
         .module('warehouse')
-<<<<<<< HEAD
-        .controller('main', function (api, $scope, $rootScope) {
-=======
-        .controller('main', function (api, $location) {
->>>>>>> e5ccd38028311df451f628e1138b0a1c84b68dfc
+        .controller('main', function (api, $scope, $rootScope, $location) {
 
             var vm = this;
             vm.sortByOptions = [
@@ -40,6 +36,5 @@
                 api.logout();
                 $location.path('/');
             }
-
         });
 })();

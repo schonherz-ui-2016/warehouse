@@ -7,8 +7,7 @@
             vm.sortByOptions = [
                     { name: "Address", value: "address" },
                     { name: "Date", value: "createdAt" },
-                    { name: "Name", value: "name" },
-                    { name: "Owner", value: "owner" }
+                    { name: "Name", value: "name" }
             ];
             vm.selectedOption = vm.sortByOptions[1];
 

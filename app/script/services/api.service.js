@@ -4,7 +4,6 @@
         .service('api', Service);
 
     function Service($http, $q) {
-        var token = "JWT ";
         var urlBase = 'http://localhost:1337/';
         this.createWarehouse = createWarehouse;
         this.deleteWarehouse = deleteWarehouse;
@@ -23,7 +22,7 @@
                 url: urlBase + 'warehouse',
                 method: 'POST',
                 headers: {
-                    Authorization: token
+                    Authorization: sessionStorage.getItem('token')
                 },
                 data: warehouse
             });
@@ -34,7 +33,7 @@
                 url: urlBase + 'warehouse/' + id,
                 method: 'DELETE',
                 headers: {
-                    Authorization: token
+                    Authorization: sessionStorage.getItem('token')
                 }
             });
         }
@@ -84,7 +83,7 @@
                 url: urlBase + 'user',
                 method: 'GET',
                 headers: {
-                    Authorization: token
+                    Authorization: sessionStorage.getItem('token')
                 }
             });
         }
@@ -94,7 +93,7 @@
                 url: urlBase + 'warehouse/' + id,
                 method: 'GET',
                 headers: {
-                    Authorization: token
+                    Authorization: sessionStorage.getItem('token')
                 }
             });
         }
@@ -104,7 +103,7 @@
                 url: urlBase + 'warehouse',
                 method: 'GET',
                 headers: {
-                    Authorization: token
+                    Authorization: sessionStorage.getItem('token')
                 }
             });
         }
@@ -115,8 +114,8 @@
                 "password": password
             })
                 .then(function (respons) {
-                    token += respons.data.token;
-                    console.log("Token:", token);
+                    sessionStorage.setItem('token', 'JWT ' + respons.data.token);
+                    console.log(sessionStorage.token);
                 });
         }
 
@@ -133,7 +132,7 @@
                 url: urlBase + 'warehouse/' + warehouse.id,
                 method: 'PUT',
                 headers: {
-                    Authorization: token
+                    Authorization: sessionStorage.getItem('token')
                 },
                 data: warehouse
             });

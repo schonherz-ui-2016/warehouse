@@ -17,7 +17,7 @@
         };
     }
 
-    function Controller() {
+    function Controller(api, $rootScope) {
         var vm = this;
         vm.onDelete = onDelete;
         vm.sortProducts = sortProducts;
@@ -29,9 +29,13 @@
         function activate() {
         }
 
-        function onDelete(){
+        function onDelete(id){
+            api.deleteWarehouse(id)
+                .then(function () {
+                    $rootScope.refresh();
+                    console.log("Warehouse is deleted");
+                });
 
-            console.log("torolve");
         }
 
         function sortProducts(sortName) {

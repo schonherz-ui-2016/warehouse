@@ -6,57 +6,58 @@
     <div>
         <span>{{warehouse.data.address}}</span>
         <span class="pull-right">
-                    <span title="Edit Warehouse" class="glyphicon glyphicon-pencil"  ng-click=""></span>
+                    <span title="Edit Warehouse" class="glyphicon glyphicon-pencil" ng-click="warehouse.onEdit(warehouse.data.id)"></span>
                     <span title="Delete Warehouse" class="glyphicon glyphicon-trash" ng-click="warehouse.onDelete(warehouse.data.id)"></span>
-                </span>
+        </span>
     </div>
 </div>
 <div class="panel-body">
     <div class="products">
         <table class="table table-striped table-bordered table-hover">
             <thead>
-                <tr>
-                    <th class="col-sm-6"
-                        ng-click="warehouse.sortProducts('name')">
-                        Name
-                        <span ng-show="warehouse.sortName == 'name' && !warehouse.sortReverse"
-                              class="glyphicon glyphicon-sort-by-alphabet"></span>
-                        <span ng-show="warehouse.sortName == 'name' && warehouse.sortReverse"
-                              class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
-                    </th>
-                    <th class="col-sm-4"
-                        ng-click="warehouse.sortProducts('category')">
-                        Category
-                        <span ng-show="warehouse.sortName == 'category' && warehouse.sortReverse"
-                              class="glyphicon glyphicon-sort-by-alphabet"></span>
-                        <span ng-show="warehouse.sortName == 'category' && !warehouse.sortReverse"
-                              class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
-                    </th>
-                    <th class="col-sm-1"
-                        ng-click="warehouse.sortProducts('price')">
-                        Price
-                        <span ng-show="warehouse.sortName == 'price' && !warehouse.sortReverse"
-                              class="glyphicon glyphicon-sort-by-order"></span>
-                        <span ng-show="warehouse.sortName == 'price' && warehouse.sortReverse"
-                              class="glyphicon glyphicon-sort-by-order-alt"></span>
-                    </th>
-                    <th class="col-sm-1"
-                        ng-click="warehouse.sortProducts('quantity')">
-                        Quantity
-                        <span ng-show="warehouse.sortName == 'quantity' && !warehouse.sortReverse"
-                              class="glyphicon glyphicon-sort-by-order"></span>
-                        <span ng-show="warehouse.sortName == 'quantity' && warehouse.sortReverse"
-                              class="glyphicon glyphicon-sort-by-order-alt"></span>
-                    </th>
-                </tr>
+            <tr>
+                <th class="col-sm-6"
+                    ng-click="warehouse.sortProducts('name')">
+                    Name
+                    <span ng-show="warehouse.sortName == 'name' && !warehouse.sortReverse"
+                          class="glyphicon glyphicon-sort-by-alphabet"></span>
+                    <span ng-show="warehouse.sortName == 'name' && warehouse.sortReverse"
+                          class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                </th>
+                <th class="col-sm-4"
+                    ng-click="warehouse.sortProducts('category')">
+                    Category
+                    <span ng-show="warehouse.sortName == 'category' && warehouse.sortReverse"
+                          class="glyphicon glyphicon-sort-by-alphabet"></span>
+                    <span ng-show="warehouse.sortName == 'category' && !warehouse.sortReverse"
+                          class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                </th>
+                <th class="col-sm-1"
+                    ng-click="warehouse.sortProducts('price')">
+                    Price
+                    <span ng-show="warehouse.sortName == 'price' && !warehouse.sortReverse"
+                          class="glyphicon glyphicon-sort-by-order"></span>
+                    <span ng-show="warehouse.sortName == 'price' && warehouse.sortReverse"
+                          class="glyphicon glyphicon-sort-by-order-alt"></span>
+                </th>
+                <th class="col-sm-1"
+                    ng-click="warehouse.sortProducts('quantity')">
+                    Quantity
+                    <span ng-show="warehouse.sortName == 'quantity' && !warehouse.sortReverse"
+                          class="glyphicon glyphicon-sort-by-order"></span>
+                    <span ng-show="warehouse.sortName == 'quantity' && warehouse.sortReverse"
+                          class="glyphicon glyphicon-sort-by-order-alt"></span>
+                </th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="product in warehouse.data.products | orderBy: warehouse.sortName: warehouse.sortReverse">
-                    <td>{{product.name}}</td>
-                    <td>{{product.category.name}}</td>
-                    <td class="price"><span>{{product.price.toFixed(2)}}</span></td>
-                    <td>{{product.quantity}}</td>
-                </tr>
+            <tr ng-repeat="product in warehouse.data.products | orderBy: warehouse.sortName: warehouse.sortReverse">
+                <td>{{product.name}}</td>
+                <td>{{product.category.name}}</td>
+                <td class="price"><span>{{product.price.toFixed(2)}}</span></td>
+                <td>{{product.quantity}}</td>
+                <td><span title="Delete Product" class="glyphicon glyphicon-trash" ng-click=""></span></td>
+            </tr>
             </tbody>
         </table>
     </div>

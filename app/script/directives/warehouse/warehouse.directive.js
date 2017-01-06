@@ -21,6 +21,7 @@
         var vm = this;
         vm.onDelete = onDelete;
         vm.sortProducts = sortProducts;
+        vm.onEdit = onEdit;
         vm.sortName = "name";
         vm.sortReverse = false;
 
@@ -35,14 +36,19 @@
                     $rootScope.refresh();
                     console.log("Warehouse is deleted");
                 });
+        }
 
+        function onEdit(id){
+            api.updateWarehouse(id)
+                .then(function(){
+                    $rootScope.refresh();
+                    console.log("Warehouse is edited");
+                });
         }
 
         function sortProducts(sortName) {
             vm.sortName = sortName;
             vm.sortReverse = !vm.sortReverse;
         }
-
     }
-
 })();

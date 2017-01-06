@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('warehouse')
-        .controller('main', function (api) {
+        .controller('main', function (api, $scope, $rootScope) {
 
             var vm = this;
             vm.sortByOptions = [
@@ -11,15 +11,15 @@
             ];
             vm.selectedOption = vm.sortByOptions[1];
 
-            refresh();
-
-            function refresh() {
+            $rootScope.refresh = function()  {
                 api.getAllData()
                     .then(function (result) {
                         vm.warehouses = result;
                         console.log(vm.warehouses);
                     })
-            }
+            };
+
+            $scope.refresh();
 
             vm.createWarehouse = function () {
                 api.createWarehouse({
@@ -28,7 +28,7 @@
                     "address": vm.address
                 })
                     .then(function () {
-                        refresh();
+                        $scope.refresh();
                     })
             }
 

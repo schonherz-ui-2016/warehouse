@@ -54,8 +54,23 @@ nav {
   margin: 0;
 }
 
+.view {
+  float: left;
+}
+
+.view .glyphicon {
+  font-size: 22px;
+  padding: 5px;
+}
+
+.view .glyphicon:hover {
+  cursor: pointer;
+  background-color: #1a314f;
+  border-radius: 5px;
+}
+
 /*--------------- Logo -----------------*/
-[logo]{
+[logo] {
   background-color: #EFEDF2; /* grey*/
   margin: 5px;
   width: 240px;
@@ -135,11 +150,13 @@ nav {
     left: 90px;
   }
 }
+
 .alert {
   margin: 1em .25em;
   padding: .4em;
   text-align: center;
 }
+
 #registration {
   font-size: 16px;
   margin: 5px auto 0;
@@ -188,21 +205,26 @@ nav {
   padding: .7em;
   text-align: center;
 }
+
 .sad-face {
   font-size: 2.5em;
   text-align: center;
 }
-.glyphicon-eye-open{
+
+.glyphicon-eye-open {
   padding: 0 .5em;
 }
+
 .glyphicon-tint {
   display: block;
   margin: .25em;
   padding-left: 3.5em;
 }
+
 .first-tear {
   margin-top: -.35em;
 }
+
 /*---  End of 404 Page CSS ---*/
 /*---  Warehouses ---*/
 .warehouses {
@@ -212,9 +234,11 @@ nav {
     margin: 0 0 0 1em;
   }
 }
+
 .warehouse {
   margin: 1em 0;
 }
+
 .table {
   margin: 0;
   .glyphicon {
@@ -224,27 +248,33 @@ nav {
     cursor: pointer;
   }
 }
+
 .price {
   span::after {
     content: " $";
   }
 }
+
 .glyphicon-pencil, .glyphicon-trash {
   cursor: pointer;
   padding: 0 .15em;
 }
+
 .glyphicon-trash:hover {
   color: #d52623;
 }
+
 .glyphicon-pencil:hover {
   color: #377ab7;
 }
+
 /*---  End of Warehouses ---*/
 /*---  List Header  ---*/
 .list-header {
   margin-top: .75em;
   padding: 0 .75em;
 }
+
 .list-header-content {
   background-color: #337ab7;
   color: white;
@@ -283,7 +313,7 @@ nav {
   }
 }
 
-.new-warehouse{
+.new-warehouse {
   font-weight: bold;
   margin: .5em .75em 0;
   width: 200px;

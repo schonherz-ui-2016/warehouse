@@ -25,15 +25,18 @@
                 <form>
                     <div class="form-group">
                         <label for="owner">Owner:</label>
-                        <input id="owner" ng-model="main.owner.name" class="form-control" name="owner" type="text" autocomplete="off" >
+                        <input id="owner" ng-model="main.owner.name" class="form-control" name="owner" type="text"
+                               autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input id="name" ng-model="main.name" class="form-control" name="name" type="text" autocomplete="off">
+                        <input id="name" ng-model="main.name" class="form-control" name="name" type="text"
+                               autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="address">Address:</label>
-                        <input id="address" ng-model="main.address" class="form-control" name="address" type="text" autocomplete="off">
+                        <input id="address" ng-model="main.address" class="form-control" name="address" type="text"
+                               autocomplete="off">
                     </div>
                 </form>
                 <div class="row">
@@ -59,6 +62,10 @@
     <div class="list-header col-sm-12">
         <div class="list-header-content panel panel-primary text-right">
             <div class="panel-body">
+                <div class="view">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
                 <div id="search-bar">
                     <i class="glyphicon glyphicon-search"></i>
                     <input id="search"
@@ -67,7 +74,8 @@
                            placeholder="Search...">
                 </div>
                 <label for="sort-by">Sort by: </label>
-                <select ng-model="main.selectedOption" ng-options="option.name for option in main.sortByOptions track by option.value"
+                <select ng-model="main.selectedOption"
+                        ng-options="option.name for option in main.sortByOptions track by option.value"
                         class="form-control" id="sort-by">
                 </select>
                 <label for="reverse">Reverse</label>

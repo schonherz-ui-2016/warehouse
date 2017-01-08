@@ -38,12 +38,23 @@
                 });
         }
 
-        function onEdit(id){
+       /* function onEdit(id){
             api.updateWarehouse(id)
                 .then(function(){
                     $rootScope.refresh();
                     console.log("Warehouse is edited");
                 });
+        }*/
+
+
+        function onEdit(id){
+            api.getWarehouse(id)
+                .then(function (result) {
+                    $rootScope.method = "PUT";
+                    $rootScope.name = result.data.name;
+                    $rootScope.address = result.data.address;
+                    $rootScope.editId = result.data.id;
+                })
         }
 
         function sortProducts(sortName) {

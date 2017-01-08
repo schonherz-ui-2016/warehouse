@@ -12,12 +12,13 @@
 </header>
 
 <!-- Modal -->
-<div id="warehouse-modal" class="modal fade">
+<div id="warehouse-modal" class="modal fade" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="pull-left">New warehouse</h3>
-                <button type="button" class="pull-right btn btn-danger btn-xs" data-dismiss="modal">
+                <h3 class="pull-left"><span ng-show="$root.method == 'POST'">New</span>
+                    <span ng-show="$root.method == 'PUT'">Edit</span> warehouse</h3>
+                <button type="button" class="pull-right btn btn-danger btn-xs" data-dismiss="modal" ng-click="main.clearModal()">
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
@@ -30,19 +31,20 @@
                     </div>
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input id="name" ng-model="main.name" class="form-control" name="name" type="text"
+                        <input id="name" ng-model="$root.name" class="form-control" name="name" type="text"
                                autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="address">Address:</label>
-                        <input id="address" ng-model="main.address" class="form-control" name="address" type="text"
+                        <input id="address" ng-model="$root.address" class="form-control" name="address" type="text"
                                autocomplete="off">
                     </div>
                 </form>
                 <div class="row">
                     <div class="col-sm-12">
                         <button ng-click="main.createWarehouse()" id="add" class="btn btn-primary" data-dismiss="modal">
-                            <b>Add</b>
+                             <span ng-show="$root.method == 'POST'"><b>Add</b></span>
+                             <span ng-show="$root.method == 'PUT'"><b>Edit</b></span>
                         </button>
                     </div>
                 </div>

@@ -24,6 +24,7 @@
         vm.onEdit = onEdit;
         vm.sortName = "name";
         vm.sortReverse = false;
+        vm.updateQuantities = updateQuantities;
 
         activate();
 
@@ -37,15 +38,6 @@
                     console.log("Warehouse is deleted");
                 });
         }
-
-       /* function onEdit(id){
-            api.updateWarehouse(id)
-                .then(function(){
-                    $rootScope.refresh();
-                    console.log("Warehouse is edited");
-                });
-        }*/
-
 
         function onEdit(id){
             api.getWarehouse(id)
@@ -61,5 +53,25 @@
             vm.sortName = sortName;
             vm.sortReverse = !vm.sortReverse;
         }
+
+        function updateQuantities(product, warehouseId) {
+            if (product.quantity == undefined) {
+                product.quantity = 0;
+            }
+            api.getWarehouse(warehouseId)
+                .then(function (result) {
+                    var currentWarehouse = result.data;
+                    currentWarehouse.quantities.forEach(function (p) {
+                        if (p.id == product.id) {
+                            p.value = product.quantity;
+                        }
+                    });
+                    api.updateWarehouse(currentWarehouse)
+                        .then(function () {
+                            $rootScope.refresh();
+                        })
+                })
+        }
+
     }
 })();

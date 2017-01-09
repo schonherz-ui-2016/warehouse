@@ -65,7 +65,7 @@
                             const product = angular.copy(products.find(function(p) {
                                 return p.id === q.id;
                             }));
-                            product.quantity = q.value;
+                            product.quantity = Number(q.value);
                             wh.products.push(product);
                         });
                     });

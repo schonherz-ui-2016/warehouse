@@ -6,13 +6,30 @@ html, body {
 
 nav {
   width: 100%;
+  height: 50px;
   background-color: #eeeeee;
+}
+#navButtons{
+  margin-left: 5px;
+  padding-right: 85px;
+  width: 500px;
+  height: 50px;
+  border-left: 1px solid #3b3b3b;
+  border-right: 1px solid #3b3b3b;
+  float: left;
 }
 
 #customer, #warehouse, #admin {
   margin-top: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
+  float: left;
+}
+
+#newBTN{
+  float: left;
+  width: 420px;
+  border-right: 1px solid #3b3b3b;
 }
 
 #sidebar {
@@ -74,8 +91,9 @@ nav {
 
 /*--------------- Logo -----------------*/
 [logo] {
+  float: left;
   background-color: #EFEDF2; /* grey*/
-  margin: 5px;
+  margin: 0px;
   width: 240px;
   height: 45px;
 
@@ -261,9 +279,6 @@ nav {
   }
 }
 
-.redRow{
-  background-color: #d52623;
-}
 .glyphicon-pencil, .glyphicon-trash {
   cursor: pointer;
   padding: 0 .15em;
@@ -324,8 +339,8 @@ nav {
 
 .new-warehouse {
   font-weight: bold;
-  margin: .5em .75em 0;
+  margin: 5px;
   width: 200px;
-}
 
+}
 /*---  End of List Header  ---*/

@@ -1,8 +1,16 @@
 <header>
     <nav>
-        <a id="customer" type="button" class="btn btn-default">Customer</a>
-        <a id="warehouse" type="button" class="btn btn-default">Warehouse</a>
-        <a id="admin" type="button" class="btn btn-default">Admin</a>
+        <div logo></div>
+        <div id="navButtons">
+            <a id="customer" type="button" class="btn btn-primary">Customer</a>
+            <a id="warehouse" type="button" class="btn btn-primary">Warehouse</a>
+            <a id="admin" type="button" class="btn btn-primary">Admin</a>
+        </div>
+        <div id="newBTN">
+            <button class="btn btn-primary new-warehouse" data-toggle="modal" data-target="#warehouse-modal">
+                New warehouse
+            </button>
+        </div>
         <button ng-click="main.logout()" id="logoutButton" type="button" class="pull-right btn btn-primary">
             <span class="glyphicon glyphicon-log-out"></span>
             <span>Logout</span>
@@ -18,7 +26,8 @@
             <div class="modal-header">
                 <h3 class="pull-left"><span ng-show="$root.method == 'POST'">New</span>
                     <span ng-show="$root.method == 'PUT'">Edit</span> warehouse</h3>
-                <button type="button" class="pull-right btn btn-danger btn-xs" data-dismiss="modal" ng-click="main.clearModal()">
+                <button type="button" class="pull-right btn btn-danger btn-xs" data-dismiss="modal"
+                        ng-click="main.clearModal()">
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
@@ -43,8 +52,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <button ng-click="main.createWarehouse()" id="add" class="btn btn-primary" data-dismiss="modal">
-                             <span ng-show="$root.method == 'POST'"><b>Add</b></span>
-                             <span ng-show="$root.method == 'PUT'"><b>Edit</b></span>
+                            <span ng-show="$root.method == 'POST'"><b>Add</b></span>
+                            <span ng-show="$root.method == 'PUT'"><b>Edit</b></span>
                         </button>
                     </div>
                 </div>
@@ -54,12 +63,6 @@
 </div>
 
 <main>
-    <div class="logoPlusNew">
-        <div logo></div>
-        <button class="btn btn-primary new-warehouse" data-toggle="modal" data-target="#warehouse-modal">
-            New warehouse
-        </button>
-    </div>
     <!-- List Header -->
     <div class="list-header col-sm-12">
         <div class="list-header-content panel panel-primary text-right">

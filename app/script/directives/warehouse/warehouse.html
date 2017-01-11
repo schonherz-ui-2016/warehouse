@@ -42,7 +42,7 @@
                     <span ng-show="warehouse.sortName == 'price' && warehouse.sortReverse"
                           class="glyphicon glyphicon-sort-by-order-alt"></span>
                 </th>
-                <th class="col-sm-1"
+                <th colspan="2" class="col-sm-1"
                     ng-click="warehouse.sortProducts('quantity')">
                     Quantity
                     <span ng-show="warehouse.sortName == 'quantity' && !warehouse.sortReverse"
@@ -62,8 +62,10 @@
                     <input type="number"
                            min="0"
                            ng-model="product.quantity"
-                           ng-change="warehouse.updateQuantities(product, warehouse.data.id)"
+                           ng-change="warehouse.updateQuantities(product, warehouse.data)"
                            ng-model-options="{debounce: 500}">
+                </td>
+                <td>
                     <span title="Delete Product" class="glyphicon glyphicon-trash" ng-click=""></span>
                 </td>
             </tr>

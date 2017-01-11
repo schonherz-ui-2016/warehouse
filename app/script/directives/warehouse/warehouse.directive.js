@@ -54,22 +54,22 @@
             vm.sortReverse = !vm.sortReverse;
         }
 
-        function updateQuantities(product, warehouseId) {
-            if (product.quantity == undefined) {
+        function updateQuantities(product, warehouse) {
+            var updatedWarehouse = angular.copy(warehouse);
+            if (!product.quantity) {
                 product.quantity = 0;
             }
-            api.getWarehouse(warehouseId)
-                .then(function (result) {
-                    var currentWarehouse = result.data;
-                    currentWarehouse.quantities.forEach(function (p) {
-                        if (p.id == product.id) {
-                            p.value = product.quantity;
-                        }
-                    });
-                    api.updateWarehouse(currentWarehouse)
-                        .then(function () {
-                            $rootScope.refresh();
-                        })
+            updatedWarehouse.quantities.forEach(function (p) {
+                if (p.id == product.id) {
+                    p.value = product.quantity;
+                }
+            });
+            api.updateWarehouse({
+                id: updatedWarehouse.id,
+                quantities: updatedWarehouse.quantities
+            })
+                .then(function () {
+                    $rootScope.refresh();
                 })
         }
 

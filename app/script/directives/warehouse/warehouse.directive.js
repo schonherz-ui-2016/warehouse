@@ -12,7 +12,8 @@
             templateUrl: './script/directives/warehouse/warehouse.html',
 
             scope: {
-                data: '=warehouse'
+                data: '=warehouse',
+                onFillProductModal: '<'
             }
         };
     }

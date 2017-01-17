@@ -6,10 +6,20 @@
     <div>
         <span>{{warehouse.data.address}}</span>
         <span class="pull-right">
-                    <span title="Add Product" class="glyphicon glyphicon-plus" ng-click="" ></span>
-                    <span title="Edit Warehouse" class="glyphicon glyphicon-pencil" id="red" data-toggle="modal" data-target="#warehouse-modal"
+                    <span title="Add Product"
+                          class="glyphicon glyphicon-plus"
+                          ng-click="warehouse.onFillProductModal()"
+                          data-toggle="modal"
+                          data-target="#product-modal"></span>
+                    <span title="Edit Warehouse"
+                          class="glyphicon glyphicon-pencil"
+                          id="red"
+                          data-toggle="modal"
+                          data-target="#warehouse-modal"
                           ng-click="warehouse.onEdit(warehouse.data.id)"></span>
-                    <span title="Delete Warehouse" class="glyphicon glyphicon-trash" ng-click="warehouse.onDelete(warehouse.data.id)"></span>
+                    <span title="Delete Warehouse"
+                          class="glyphicon glyphicon-trash"
+                          ng-click="warehouse.onDelete(warehouse.data.id)"></span>
         </span>
     </div>
 </div>

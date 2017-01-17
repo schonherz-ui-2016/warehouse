@@ -5,9 +5,11 @@
 
     function Service($http, $q) {
         var urlBase = 'http://localhost:1337/';
+        this.createTreeObject = createTreeObject;
         this.createWarehouse = createWarehouse;
         this.deleteWarehouse = deleteWarehouse;
         this.getAllData = getAllData;
+        this.getCategories = getCategories;
         this.getProducts = getProducts;
         this.getUsers = getUsers;
         this.getWarehouse = getWarehouse;
@@ -16,6 +18,35 @@
         this.logout = logout;
         this.registration = registration;
         this.updateWarehouse = updateWarehouse;
+
+        function buildTree(mainCategories, categories){
+            mainCategories.forEach(function (category) {
+                category.categories = [];
+                categories.forEach(function (subCategory) {
+                    if (subCategory.parent && subCategory.parent.id == category.id) {
+                        category.categories.push(angular.copy(subCategory));
+                    }
+                });
+                if (category.categories.length > 0) {
+                    buildTree(category.categories, categories);
+                }
+            })
+        }
+
+        function createTreeObject() {
+            return getCategories()
+                .then(function (result) {
+                    const categories = result.data;
+                    var mainCategories = [];
+                    categories.forEach(function (c) {
+                        if (!c.hasOwnProperty('parent')) {
+                            mainCategories.push(angular.copy(c));
+                        }
+                    });
+                    buildTree(mainCategories, categories);
+                    return mainCategories;
+                })
+        }
 
         function createWarehouse(warehouse) {
             warehouse.quantities=[];
@@ -73,6 +104,16 @@
                     return warehouses;
 
                 });
+        }
+
+        function getCategories() {
+            return $http({
+                url: urlBase + 'category',
+                method: 'GET',
+                headers: {
+                    Authorization: sessionStorage.getItem('token')
+                }
+            });
         }
 
         function getProducts() {

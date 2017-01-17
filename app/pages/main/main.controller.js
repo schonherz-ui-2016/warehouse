@@ -4,6 +4,9 @@
         .controller('main', function (api, $scope, $rootScope, $location) {
 
             var vm = this;
+            vm.fillProductModal = fillProductModal;
+            vm.tableView = true;
+            vm.treeView = false;
             vm.sortByOptions = [
                 {name: "Address", value: "address"},
                 {name: "Date", value: "createdAt"},
@@ -21,6 +24,18 @@
             };
 
             $scope.refresh();
+
+            function fillProductModal() {
+                api.getProducts()
+                    .then(function (result) {
+                        vm.products = result.data;
+                    });
+                api.createTreeObject()
+                    .then(function (result) {
+                        vm.treeObject = result;
+                        console.log(vm.treeObject);
+                    })
+            }
 
             vm.createWarehouse = function () {
                 if ($rootScope.method == "POST") {

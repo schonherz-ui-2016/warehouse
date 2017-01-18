@@ -26,6 +26,7 @@
         vm.sortName = "name";
         vm.sortReverse = false;
         vm.updateQuantities = updateQuantities;
+        vm.deleteProduct = deleteProduct;
 
         activate();
 
@@ -74,5 +75,19 @@
                 })
         }
 
+        function deleteProduct(warehouse, product){
+            var modified = angular.copy(warehouse);
+            var index = modified.quantities.map(function (quantity) {
+                return quantity.id;
+            }).indexOf(product.id);
+            modified.quantities.splice(index, 1);
+            api.updateWarehouse({
+                id: modified.id,
+                quantities: modified.quantities
+            })
+                .then(function () {
+                    $rootScope.refresh();
+                })
+        }
     }
 })();

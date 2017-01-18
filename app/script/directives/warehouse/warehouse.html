@@ -63,7 +63,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="product in warehouse.data.products | orderBy: warehouse.sortName: warehouse.sortReverse"
+            <tr class="table-row" ng-repeat="product in warehouse.data.products | orderBy: warehouse.sortName: warehouse.sortReverse"
                 ng-class="{'danger' : product.quantity == '0'}">
                 <td>{{product.name}}</td>
                 <td>{{product.category.name}}</td>
@@ -76,7 +76,7 @@
                            ng-model-options="{debounce: 500}">
                 </td>
                 <td>
-                    <span title="Delete Product" class="glyphicon glyphicon-trash" ng-click=""></span>
+                    <span title="Delete Product" class="glyphicon glyphicon-trash row-trash" ng-click="warehouse.deleteProduct(warehouse.data, product)"></span>
                 </td>
             </tr>
             </tbody>

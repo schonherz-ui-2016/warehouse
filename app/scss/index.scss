@@ -89,6 +89,7 @@ nav {
 
 .view {
   float: left;
+  visibility: hidden;
 }
 
 .view .glyphicon {
@@ -296,12 +297,18 @@ nav {
   padding: 0 .15em;
 }
 
-.glyphicon-trash:hover {
+.glyphicon-trash:hover, .glyphicon-pencil:hover, .glyphicon-plus:hover {
   color: #d52623;
 }
 
-.glyphicon-pencil:hover, .glyphicon-plus:hover {
-  color: #377ab7;
+.row-trash{
+  visibility: hidden;
+}
+.table-row:hover{
+  .row-trash{
+    visibility: visible;
+    color: #d52623;
+  }
 }
 
 /*---  End of Warehouses ---*/

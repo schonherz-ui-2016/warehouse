@@ -151,7 +151,7 @@
         }
 
         function login(email, password) {
-            return $http.post('http://localhost:1337' + '/user/login', {
+            return $http.post(urlBase + 'user/login', {
                 "email": email,
                 "password": password
             })
@@ -167,7 +167,7 @@
         }
 
         function registration(user) {
-            return $http.post('http://localhost:1337' + '/user/registration', {
+            return $http.post(urlBase + 'user/registration', {
                 "email": user.email,
                 "password": user.password,
                 "name": user.name

@@ -3,8 +3,8 @@
         .module('warehouse')
         .service('api', Service);
 
-    function Service($http, $q) {
-        var urlBase = 'http://localhost:1337/';
+    function Service($http, $q, $window) {
+        var urlBase = ($window.urlBase || 'http://localhost:1337') + '/';
         this.createTreeObject = createTreeObject;
         this.createWarehouse = createWarehouse;
         this.deleteWarehouse = deleteWarehouse;

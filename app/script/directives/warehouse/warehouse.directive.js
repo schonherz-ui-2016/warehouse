@@ -48,6 +48,7 @@
                     $rootScope.name = result.data.name;
                     $rootScope.address = result.data.address;
                     $rootScope.editId = result.data.id;
+                    $rootScope.owner = result.data.owner;
                 })
         }
 

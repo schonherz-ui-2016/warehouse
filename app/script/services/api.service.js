@@ -131,13 +131,31 @@
         }
 
         function getWarehouse(id) {
-            return $http({
+            const warehouse = $http({
                 url: urlBase + 'warehouse/' + id,
                 method: 'GET',
                 headers: {
                     Authorization: sessionStorage.getItem('token')
                 }
             });
+            const promises = {
+                users: getUsers(),
+                warehouse: warehouse
+            };
+            return $q.all(promises)
+                .then(function(result) {
+                    const users = result.data.users;
+                    const wh = result.data.warehouse;
+
+                    const user = users.find(function(u) {
+                        return u.id === wh.ownerId;
+                    });
+                    wh.owner = angular.copy(user);
+
+                    return {
+                        data: wh
+                    }
+                });
         }
 
         function getWarehouses() {

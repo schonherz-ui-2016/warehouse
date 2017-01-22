@@ -5,8 +5,8 @@
 
             var vm = this;
             vm.fillProductModal = fillProductModal;
-            vm.tableView = true;
-            vm.treeView = false;
+            vm.tableView = false;
+            vm.treeView = true;
             vm.sortByOptions = [
                 {name: "Address", value: "address"},
                 {name: "Date", value: "createdAt"},
@@ -25,7 +25,8 @@
 
             $scope.refresh();
 
-            function fillProductModal() {
+            function fillProductModal(warehouse) {
+                $rootScope.warehouse = warehouse;
                 api.getProducts()
                     .then(function (result) {
                         vm.products = result.data;

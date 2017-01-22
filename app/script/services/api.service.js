@@ -144,8 +144,8 @@
             };
             return $q.all(promises)
                 .then(function(result) {
-                    const users = result.data.users;
-                    const wh = result.data.warehouse;
+                    const users = result.users.data;
+                    const wh = result.warehouse.data;
 
                     const user = users.find(function(u) {
                         return u.id === wh.ownerId;

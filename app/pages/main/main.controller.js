@@ -41,7 +41,7 @@
                 if ($rootScope.method == "POST") {
 
                     api.createWarehouse({
-                        "owner": 1,
+                        "ownerId": 1,
                         "name": $rootScope.name,
                         "address": $rootScope.address
                     })
